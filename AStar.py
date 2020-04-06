@@ -14,6 +14,8 @@ class Block:
         self.x = init_x
         self.y = init_y
         self.color = (255, 255, 255)
+        self.status = "N" # N: Not checked; F: Checked; S: Start position; E: End Position
+
 
 def main(Blocknumber, Size_Blocks):
     # Define the Board
@@ -32,8 +34,8 @@ def main(Blocknumber, Size_Blocks):
     #print(fields_new, len(fields_new))
 
     # Setting Start and End
-    fields_new[1].color = (0, 0, 0)
-    fields_new[358].color = (0, 0, 0)
+    fields_new[1].color, fields_new[1].status = (0, 0, 0), "S"
+    fields_new[358].color, fields_new[358].status = (0, 0, 0), "E"
 
     while True:
         DrawGrid(fields_new, fields_fin, Size_Blocks)
@@ -45,6 +47,7 @@ def main(Blocknumber, Size_Blocks):
         pygame.display.update()
 
 
+# Visualize the Board
 def DrawGrid(Field1, Field2, Blocksize):
     for i in Field1:
         rect = pygame.Rect(i.x, i.y, 
@@ -63,8 +66,13 @@ def DrawGrid(Field1, Field2, Blocksize):
         pygame.draw.rect(screen, i.color, rect)
 
 
+# Calculate the Block Properties
 def Evaluate_Field(Fields_New, Fields_Fin):
-    
+    neighbours = []
+    for i in Fields_New:
+        if i.status="S:
+            neighbours.append()
+
     fields_new, fields_fin = Fields_New, Fields_Fin
     return fields_new, fields_fin
 
