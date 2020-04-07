@@ -7,24 +7,26 @@ import random
 import matplotlib.pyplot as plt
 
 def bubble_sort(Sortlist):
-    cont = True
-
-    while cont==True:
-        for i in range(len(Sortlist)-1):
+    fin = False
+    counter = 0
+    while fin==False:
+        fin = True
+        for i in range(0, len(Sortlist)-1):    
             a = Sortlist[i]
             b = Sortlist[i+1]
             ind = i
             if a < b:
-                cont=False
+                pass
             elif a > b:
                 Sortlist[ind], Sortlist[ind+1] = b, a
-                cont=True
-            print(Sortlist)
-            
+                fin = False
+            counter += 1
+    print("End: ", Sortlist)
+    print("Number of steps: ", counter)
 
 
 if __name__ == "__main__":
     sortlist = [i for i in range(10)]
     random.shuffle(sortlist)
-    #print(sortlist)
+    print("Start: ", sortlist)
     bubble_sort(sortlist)
