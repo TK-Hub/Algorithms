@@ -20,8 +20,7 @@ def bubble_sort(Sortlist):
                 Sortlist[ind], Sortlist[ind+1] = b, a
                 cont=True
             print(Sortlist)
-            plt.bar(range(len(Sortlist)), Sortlist)
-            plt.show()
+            
 
 
 if __name__ == "__main__":
