@@ -5,10 +5,18 @@
 #==================================================================================================
 import random
 import matplotlib.pyplot as plt
+import numpy as np
 
 def bubble_sort(Sortlist):
     fin = False
     counter = 0
+    
+    #fig = plt.figure()  # create a figure object
+    #ax = plt.gca()
+    #fig = plt.bar(np.asarray(range(0, len(Sortlist))), np.asarray(Sortlist), align='center')
+    #plt.show()
+    #fig.canvas.draw()
+
     while fin==False:
         fin = True
         for i in range(0, len(Sortlist)-1):    
@@ -21,6 +29,10 @@ def bubble_sort(Sortlist):
                 Sortlist[ind], Sortlist[ind+1] = b, a
                 fin = False
             counter += 1
+
+            #plt.bar(np.asarray(range(0, len(Sortlist))), np.asarray(Sortlist))
+            #fig.canvas.draw()
+
     print("End: ", Sortlist)
     print("Number of steps: ", counter)
 
