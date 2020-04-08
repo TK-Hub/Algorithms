@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 def bubble_sort(Sortlist):
+    print("Start: ", Sortlist)
     fin = False
     counter = 0
     
@@ -33,12 +34,28 @@ def bubble_sort(Sortlist):
             #plt.bar(np.asarray(range(0, len(Sortlist))), np.asarray(Sortlist))
             #fig.canvas.draw()
 
-    print("End: ", Sortlist)
+    print("End Bubble Sort: ", Sortlist)
     print("Number of steps: ", counter)
 
+def selection_sort(Sortlist):
+    counter = 0
+    random.shuffle(Sortlist)
+    positions = len(Sortlist)
+    print("Start: ", Sortlist)
+    for pos in range(0,positions):
+        smallest = min(Sortlist[pos:len(Sortlist)])
+        ind_smallest = Sortlist.index(smallest)
+        current = Sortlist[pos]
+        Sortlist[pos], Sortlist[ind_smallest] = smallest, current
+    counter+=1
+    print("End Selection Sort: ", Sortlist)
+    print("Number of steps: ", counter)    
+
+
+#==================================================================================================
 
 if __name__ == "__main__":
     sortlist = [i for i in range(10)]
     random.shuffle(sortlist)
-    print("Start: ", sortlist)
     bubble_sort(sortlist)
+    selection_sort(sortlist)
